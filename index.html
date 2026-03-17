@@ -475,7 +475,7 @@ function startQuiz(){
   S.pool=f.slice(0,t); S.cur=0; S.ans=new Array(t).fill(null); S.score=0;
   document.getElementById('home').style.display='none';
   document.getElementById('result').classList.remove('show');
-  document.getElementById('quiz').style.display='';
+  document.getElementById('quiz').style.display='block';
   rdots(); rprog(); rq();
 }
 
@@ -596,8 +596,9 @@ function showResult(){
   } else rv.innerHTML='';
 
   document.getElementById('home-btn').onclick=()=>{
+    document.getElementById('quiz').style.display='none';
     rs.classList.remove('show');
-    document.getElementById('home').style.display='';
+    document.getElementById('home').style.display='block';
     updAvail();
   };
   document.getElementById('retry-btn').onclick=()=>{rs.classList.remove('show');startQuiz();};
